@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency conversion</title>
+    <style>
+        select {
+            width: 500px;
+
+        }
+        .widthcontainer{
+            width: 500px;
+            margin: auto;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+<div class="widthcontainer">
+<!--<i class="fas fa-cloud" style="font-size:60px;color:lightblue;"></i>-->
+
+
+    <b>Amount:
+    <input type="text" name="A" id="output">
+    <b>From Currency:<b>
+    <select id="from">
+        <option value="23000">VND-Việt Nam Dong</option>
+        <option value="1">USD-Do La My</option>
+        <option value="31.24">THB-Bat Thai Lan</option>
+        <option value="0.85">ERO</option>
+    </select>
+    To Currency:
+    <select id="to">
+        <option value="23000">VND-Việt Nam Dong</option>
+        <option value="1">USD-Do La My</option>
+        <option value="31.24">THB-Bat Thai Lan</option>
+        <option value="0.85">ERO</option>
+    </select>
+
+    <button type="button" onclick="changeMoney()">Convert</button>
+
+    <input type="text" id="Kq"></input>
+</div>
+
+    <script>
+        function changeMoney() {
+
+            let input = parseFloat(document.getElementById("output").value);
+            let select1 = document.getElementById("from").value;
+            let select2 = document.getElementById("to").value;
+            let KQ = input * select2 / select1;
+            document.getElementById('Kq').value = KQ + '$';
+        }
+
+    </script>
+
+</body>
+</html>
